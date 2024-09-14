@@ -1,0 +1,10 @@
+*.log
+*.pid
+*.pid.lock
+
+# Node.js
+node_modules
+package-lock.json
+
+.env
+

@@ -1,0 +1,8 @@
+// generated files
+node_modules
+
+// local .env file (the defaults are fine for development)
+.env
+
+package-lock.json
+prompts/
