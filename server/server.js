@@ -21,7 +21,7 @@ app.use(cors({
 }));
 app.use(express.json());
 
-// Add this near the top of the file
+// Serve static files from the React frontend app
 app.use(express.static(path.join(__dirname, '../frontend/build')));
 
 // Connect to MongoDB
@@ -113,7 +113,7 @@ app.use((err, req, res, next) => {
   res.status(500).json({ message: 'Internal server error', error: err.message });
 });
 
-// Add this after your API routes
+// After your API routes, add this:
 app.get('*', (req, res) => {
   res.sendFile(path.join(__dirname, '../frontend/build', 'index.html'));
 });

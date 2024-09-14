@@ -39,7 +39,8 @@ function Game({ onScoreUpdate, highScore, username }) {
   }, [getDifficultyRange]);
 
   useEffect(() => {
-    const ws = new WebSocket('ws://localhost:5000');
+    const wsUrl = process.env.REACT_APP_WS_URL || 'wss://shram.onrender.com';
+    const ws = new WebSocket(wsUrl);
     
     ws.onopen = () => {
       console.log('WebSocket connected');
