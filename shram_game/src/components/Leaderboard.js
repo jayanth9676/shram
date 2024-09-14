@@ -24,7 +24,8 @@ function Leaderboard({ currentUser, onRankChange }) {
   useEffect(() => {
     fetchLeaderboard();
 
-    const wsUrl = process.env.REACT_APP_WS_URL || 'ws://localhost:5000';
+    const wsUrl = process.env.REACT_APP_WS_URL || 'wss://shram.onrender.com';
+    // const wsUrl = process.env.REACT_APP_WS_URL || 'ws://localhost:5000';
     const ws = new WebSocket(wsUrl);
 
     ws.onopen = () => {
